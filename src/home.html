@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="page__button-scroll button-scroll">К</div>
+				<section id="main-screen" class="page__main-screen ">
+					<div class="main-screen__inner">
+						<div class="main-screen__container">
+							<div class="main-screen__body">
+								<h1 class="main-screen__title title">Лаборатория дизайна</h1>
+								<p class="main-screen__text">
+									Мы профессиональные профессианалы. Наша компания афмгеть какая крутая. Вы не пожалеете что обратились к нам за вообще чем угодно. 
+									Реальные сроки, реальные вещи. Приходите.
+								</p>
+							</div>
+						</div>
+						<div class="main-screen__image">
+							<img src="@img/hand.png" alt="Hand">
+						</div>
+					</div>
+				</section>
+				<section id="question" class="page__question question">
+					<div class="question__container">
+						<div class="question__block">
+							<div class="question__image">
+								<img src="@img/bubble.png" alt="Bubble">
+							</div>
+						</div>
+						<div class="question__body">
+							<h2 class="question__title title">зачем это всем? а вам?</h2>
+							<p class="question__text">
+								нужно. поверьте на слово. нам нужны ваши деньги, а вам наш дизайн. все.
+							</p>
+						</div>
+						
+					</div>
+				</section>
+				<div id="services" class="page__services services">
+					<div class="services__container">
+						<ul class="services__list">
+							<li class="services__item"><a href="#1" class="services__link services__link_black">брендинг.</a></li>
+							<li class="services__item"><a href="#2" class="services__link services__link_black">ребрендинг.</a></li>
+							<li class="services__item"><a href="#3" class="services__link">influecer marketing.</a></li>
+							<li class="services__item"><a href="#4" class="services__link services__link_black">транзитная реклама.</a></li>
+							<li class="services__item"><a href="#5" class="services__link">наружная реклама.</a></li>
+							<li class="services__item"><a href="#6" class="services__link services__link_black">внутренняя реклама.</a></li>
+							<li class="services__item"><a href="#7" class="services__link">логотип.</a></li>
+							<li class="services__item"><a href="#8" class="services__link services__link_black">упаковка.</a></li>
+							<li class="services__item"><a href="#9" class="services__link services__link_black">брендбук.</a></li>
+							<li class="services__item"><a href="#10" class="services__link">айдентика.</a></li>
+							<li class="services__item"><a href="#11" class="services__link services__link_black">визитки.</a></li>
+							<li class="services__item"><a href="#12" class="services__link services__link_black">брашуры.</a></li>
+							<li class="services__item"><a href="#13" class="services__link services__link_black">каталоги.</a></li>
+							<li class="services__item"><a href="#14" class="services__link">нэйиминг.</a></li>
+							<li class="services__item"><a href="#15" class="services__link services__link_black">слоган.</a></li>
+							<li class="services__item"><a href="#16" class="services__link services__link_black">рекламный текст.</a></li>
+							<li class="services__item"><a href="#17" class="services__link">приложения ios.</a></li>
+							<li class="services__item"><a href="#18" class="services__link services__link_black">приложения android.</a></li>
+							<li class="services__item"><a href="#19" class="services__link">лэндинг.</a></li>
+							<li class="services__item"><a href="#20" class="services__link services__link_black">сайт.</a></li>
+							<li class="services__item"><a href="#21" class="services__link services__link_black">разработка приложений.</a></li>
+							<li class="services__item"><a href="#22" class="services__link">техническая поддержка</a></li>
+						</ul>            
+					</div>
+				</div>
+				<section id="suggestions" class="page__suggestions suggestions">
+					<div class="suggestions__container">
+						<h3 class="suggestions__title">колбы решений</h3>
+						<div class="suggestions__body">
+							<div class="suggestions__item item-suggestions">
+								<a href="#" class="item-suggestions__link">
+									<div class="item-suggestions__image">
+										<img src="@img/1Flask.png" alt="light решение" title="light решение">
+									</div>
+									<div class="item-suggestions__name">light</div>
+								</a>
+							</div>
+							<div class="suggestions__item item-suggestions">
+								<a href="#" class="item-suggestions__link">
+									<div class="item-suggestions__image">
+										<img src="@img/2Flask.png" alt="buisiness решение" title="buisiness решение">
+									</div>
+									<div class="item-suggestions__name">buisiness</div>
+								</a>
+							</div>
+							<div class="suggestions__item item-suggestions">
+								<a href="#" class="item-suggestions__link">
+									<div class="item-suggestions__image">
+										<img src="@img/3Flask.png" alt="pro решение" title="pro решение">
+									</div>
+									<div class="item-suggestions__name">pro</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div id="contacts" class="page__contacts contacts">
+					<div class="contacts__container">
+						<form class="contacts__form form" action="#">
+							<div class="form__inner">
+								<input autocomplete="off" type="text" name="form[]" placeholder="Имя">
+								<input autocomplete="off" type="text" name="form[]" placeholder="Телефон">
+								<textarea autocomplete="off" name="form[]" placeholder="Введите ваше сообщение" data-error="Ошибка"></textarea>
+							</div>
+							<div class="form__submit">
+								<input autocomplete="off" type="submit" name="form[]">
+							</div>
+							
+						</form>
+					</div>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

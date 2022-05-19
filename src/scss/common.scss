@@ -1,0 +1,38 @@
+// Заголовки, общие БЄМ блоки и проче...
+.title {
+    font-family: dockerone;
+    @include adaptiveValue("font-size",96,30);
+    line-height: 1.21;
+}
+
+.page {
+    // .page__button-scroll
+    &__button-scroll{
+        position: fixed;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
+    }
+}
+.button-scroll {
+    cursor: pointer;
+    background-color: #738b9b;
+    @include adaptiveValue("width",441,80);
+    @include adaptiveValue("height",144,45);
+    font-family: dockertwo;
+    @include adaptiveValue("font-size",72,30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    @include adaptiveValue("border-radius",10,5);
+    transition: all 0.3s ease 0s;
+    &_hide {
+        transform: translateY(105%);
+    }
+    @media (any-hover: hover){
+        &:hover{
+            opacity: .6;
+        }
+    }
+}

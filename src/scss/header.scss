@@ -1,0 +1,145 @@
+//====================================================================================================
+.header {
+	position: absolute;
+	z-index: 30;
+	@include adaptiveValue("top",82,10);
+	left: 0;
+	width: 100%;
+	// .header__container
+	&__container {
+	}
+
+	// .header__body
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		padding-left: 38px;
+		@media (max-width:$mobile){
+			padding-left: 0;
+			align-items: center;
+		}
+	}
+
+	// .header__logo
+	&__logo {
+		img {
+			@include adaptiveValue("width",674,150);
+			// width: rem(674);
+		}
+	}
+
+	// .header__menu
+	&__menu {
+	}
+}
+.menu {
+	// position: relative;
+	// z-index: 30;
+	// .menu__icon
+	&__icon {
+	}
+
+	// .menu__body
+	&__body {
+	}
+
+	// .menu__list
+	&__list {
+		padding-top: rem(12);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		@include adaptiveValue("column-gap",34,15);
+		@media (max-width:$mobile){
+			position: fixed;
+			top: 0;
+			right: 0;
+			display: block;
+			padding: rem(70) rem(10) rem(10);
+			background-color: $orangeColor;
+			border-bottom-left-radius: rem(10);
+			transform: translate(100%,-100%);
+			transition: transform 0.3s ease 0s;
+			.menu-open &  {
+				transform: translate(0,0);
+			}
+		}
+	}
+
+	// .menu__item
+	&__item {
+	}
+
+	// .menu__link
+	&__link {
+		padding: rem(10) 0;
+		display: inline-block;
+		text-transform: uppercase;
+		@include adaptiveValue("font-size",52,18);
+		color: $mainColor;
+		transition: opacity 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				opacity: .6;
+			}
+		}
+		@media (max-width:$mobile){
+			&:active {
+				color: #ebebf7; 
+			}
+		}
+	}
+	
+}
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: fixed;
+		z-index: 40;
+		top: rem(35);
+		right: rem(15);
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: $mainColor;
+		}
+		&::before {
+			top: 0px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+

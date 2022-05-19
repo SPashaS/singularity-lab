@@ -1,0 +1,462 @@
+//====================================================================================================
+.page {
+    // .page__main-screen
+    &__main-screen {
+    }
+    // .page__question
+    &__question {
+    }
+    // .page__services
+    &__services {
+    }
+    // .page__suggestions
+    &__suggestions {
+    }
+    // .page__contacts
+    &__contacts {
+    }
+}
+.main-screen {
+    @include adaptiveValue("padding-top",177,85);
+    padding-bottom: rem(45);
+    
+    // .main-screen__inner
+	&__inner {
+        position: relative;
+        @include adaptiveValue("min-height",1473, 400,2250,992,1);
+        @media (max-width:$tablet){
+            min-height: auto; 
+        }
+        &::before{
+            content:'';
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            display: block;
+            width: percent(2161,2596);
+            width: rem(2161);
+            @include adaptiveValue("width",2161,500);
+            height: 100%;
+            transform: translateX(-40%);
+            background: right / contain no-repeat url('@img/topFill.png');
+            @media (max-width:$mobile){
+                background: right bottom / contain no-repeat url('@img/topFill.png');
+            }
+            @media (max-width:$tablet){
+                bottom: -8%; 
+            }
+        }
+	}
+
+    // .main-screen__container
+    &__container {
+        display: flex;
+        @include adaptiveValue("padding-top",530,90);
+        position: relative;
+    }
+    // .main-screen__image-ibg
+	&__image{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-46%);
+        width: 50%;
+        max-width: rem(1283);
+        @media (max-width:$tablet){
+            position: relative; 
+            top: 0;
+            transform: translateY(-5%);
+        }
+        // padding-bottom: 46.6%;
+        img {
+            width: 100%;
+        }
+	}
+
+    // .main-screen__body
+    &__body {
+        flex: 0 1 50%;
+        padding-left: rem(40);
+        padding-right: rem(15);
+        position: relative;
+        z-index: 2;
+        @media (max-width:$tablet){
+            padding: 0;
+            flex-basis: 100%;
+        }
+    }
+
+    // .main-screen__title
+    &__title {
+        margin-bottom: rem(20);
+    }
+
+    // .main-screen__text
+    &__text {
+        @include adaptiveValue("font-size",50,20);
+        line-height: 1.31;
+        @include adaptiveValue("padding-bottom",410, 10);
+        @media (max-width:$tablet){
+            padding-bottom: rem(20);
+        }
+    }
+}
+
+//====================================================================================================
+
+.question {
+    @include adaptiveValue("padding-top",198,50);
+    @include adaptiveValue("padding-bottom",100,50);
+    // .question__container
+
+    &__container {
+        display: flex;
+        @media (max-width:$tablet){
+            flex-direction: column-reverse;
+        }
+    }
+
+    // .question__block
+    &__block {
+        flex: 1 1 auto;
+        position: relative;
+        min-height: rem(600);
+        @media (max-width:$tablet){
+            min-height: auto;
+        }
+    }
+
+    // .question__image
+    &__image {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -70%);
+        // width: rem(491);
+        @include adaptiveValue("width",491,160);
+        @include adaptiveValue("height",966,315);
+        height: rem(966);
+        width: percent(491,1414);
+        @media (max-width:$pc){
+            transform: translate(-90%, -70%);
+        }
+        @media (max-width:$tablet){
+            position: relative;
+            transform: translate(-70%,0);
+        }
+        &::before,
+        &::after{
+            content:'';
+            display: block;
+            width: percent(549,491);
+            height: percent(350,966);
+            // height: rem(350);
+            background-image: url('@img/rectangle.svg');
+            background-size: cover;
+            position: absolute;
+            bottom: rem(75);
+            left: rem(175);
+            z-index: -1;
+            @media (max-width:$mobile){
+                bottom: 0;
+                left: 25%;
+            }
+        }
+        &::after{
+            bottom: 34%;
+            left: 12%;
+            transform: rotate(-36deg);
+        }
+        img {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    // .question__body
+    &__body {
+        flex: 0 0 percent(834,2250);
+        @media (max-width:$tablet){
+            margin-bottom: rem(30);
+        }
+    }
+
+    // .question__title
+    &__title {
+        @include adaptiveValue(" margin-bottom",57,20);
+    }
+
+    // .question__text
+    &__text {
+        @include adaptiveValue("font-size",60,25);
+        line-height: 1.21;
+    }
+}
+
+//====================================================================================================
+
+.services {
+    background-color: $mainColor;
+    border-radius: rem(10);
+    position: relative;
+    z-index: 20;
+    // .services__container
+    &__container {
+        max-width: rem(2320);
+    }
+
+    // .services__list
+    &__list {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: rem(15);
+        row-gap: rem(10);
+        @media (max-width:$tablet){
+            column-gap: rem(5);
+            row-gap: 0;
+        }
+    }
+
+    // .services__item
+    &__item {
+        a {
+            color: #c0fd00;
+        }
+        a:visited {
+            color: #ebebf7;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        color: #c0fd00;
+        @include adaptiveValue("font-size",56,18);
+        text-transform: uppercase;
+        text-align: center;
+        transition: color .5s ease 0s;
+        &_black {
+            font-weight: 900;
+        }
+        @media (any-hover: hover){
+            &:hover{
+                color: #ebebf7;
+            }
+        }
+        
+    }
+}
+
+//====================================================================================================
+.suggestions {
+    @include adaptiveValue("padding-top",205,50);
+    @include adaptiveValue("padding-bottom",230,30);
+    // .suggestions__container
+    &__container {
+    }
+
+    // .suggestions__title
+
+    &__title {
+        @include adaptiveValue("font-size",60,30);
+        @include adaptiveValue("margin-bottom",205,25);
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    // .suggestions__body
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+        row-gap: rem(40);
+        @media (max-width:$mobile){
+        }
+    }
+
+    // .suggestions__item
+    &__item {
+        &:first-child {
+            transform: translateX(rem(61));
+        }
+        &:last-child {
+            transform: translateX(rem(-82));
+        }
+        @media (max-width:$tablet){
+            &:first-child,
+            &:last-child {
+                transform: none;
+            }
+        }
+    }
+}
+.item-suggestions {
+    display: flex;
+    justify-content: center;
+    // .item-suggestions__link
+	&__link {
+        @media (any-hover: hover){
+            &:hover{
+                .item-suggestions__name {
+                    opacity: .6;
+                }
+                
+            }
+        }
+	}
+
+    // .item-suggestions__image
+    &__image {
+        @include adaptiveValue("margin-bottom",100,30);
+        img {
+            @include adaptiveValue("height",722,300);
+        }
+    }
+
+    // .item-suggestions__name
+    &__name {
+        font-family: dockerone;
+        @include adaptiveValue("font-size",48,30);
+        transition: all 0.3s ease 0s;
+        text-align: center;
+    }
+}
+
+//====================================================================================================
+.contacts {
+    @include adaptiveValue("padding-top",190,20);
+    @include adaptiveValue("padding-bottom",360,20);
+    position: relative;
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: center / contain no-repeat url('@img/bottomFill.png');
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    // .contacts__container
+    &__container {
+    }
+
+    // .contacts__form
+    &__form {
+    }
+}
+.form {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transform: translateX(6%);
+    @media (max-width:1400px){
+        transform: none;
+    }
+    @media (max-width:$mobile){
+        display: block;
+    }
+    // .form__inner
+    &__inner {
+        max-width: rem(850);
+        width: 100%;
+        input,
+        textarea {
+            width: 100%;
+            box-shadow: inset 0px 6px 30px 0 rgba(0, 0, 0, 0.7);
+            border-radius: rem(80);
+            @include adaptiveValue("border-radius",80, 20);
+            border: solid 5px #000;
+            background-color: #ebebf7;
+            @include adaptiveValue("height",160,40);
+            @include adaptiveValue("padding-left",60,20);
+            @include adaptiveValue("padding-right",60,20);
+            @include adaptiveValue("font-size",48,20);
+            font-weight: 300;
+            color: $mainColor;
+            &::placeholder {
+                @include adaptiveValue("font-size",48,20);
+                color: $mainColor;
+            }
+            @media (max-width:$tablet){
+                box-shadow: inset 0px 6px 20px 0 rgba(0, 0, 0, 0.7);
+            }
+            @media (max-width:$mobile){
+                box-shadow: inset 0px 6px 15px 0 rgba(0, 0, 0, 0.6);
+            }
+            @media (max-width:$mobileSmall){
+                box-shadow: inset 0px 6px 10px 0 rgba(0, 0, 0, 0.5);
+                border: solid 2px #000;
+            }
+        }
+        input {
+            @include adaptiveValue("margin-bottom",80,25);
+        }
+        textarea {
+            @include adaptiveValue("padding-top",65,20);
+            @include adaptiveValue("height", 324,200);
+            resize: none;
+        }
+    }
+
+    // .form__submit
+    &__submit {
+        align-self: flex-end;
+        margin-left: rem(80);
+        @include adaptiveValue("width",165,65);
+        @include adaptiveValue("height",160,63);
+        flex: 0 0 auto;
+        position: relative;
+        z-index: 2;
+        border-radius: rem(80);
+        border: solid 5px #000;
+        box-shadow: inset 0px 6px 30px 0 rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+        background-color: #ebebf7;
+        @media (max-width:$mobile){
+            margin: rem(15) auto 0;
+            border: solid 2px #000;
+            box-shadow: inset 0px 2px 15px 0 rgba(0, 0, 0, 0.45);
+        }
+        &::after{
+            content:'';
+            position: absolute;
+            top: 50%;
+            left: 14%;
+            transform: translateY(-50%);
+            width: percent(130,165);
+            height: percent(147,160);
+            background: center / contain no-repeat url('@img/send.png');
+            transition: all 0.3s ease 0s;
+        }
+        &:active {
+            &::after{
+                transform: translateY(-50%) scale(0.8);
+            }
+        }
+        @media (any-hover: hover){
+            &:hover{
+                &::after{
+                    transform: translateY(-50%) scale(0.8);
+                }
+            }
+        }
+
+        input {
+            position: absolute;
+            cursor: pointer;
+            z-index: 3;
+            border-radius: rem(80);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+}
+
+//====================================================================================================
+
+//====================================================================================================

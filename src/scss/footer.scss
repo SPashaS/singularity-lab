@@ -1,0 +1,44 @@
+//====================================================================================================
+.footer {
+    @include adaptiveValue("padding-bottom",60,30);
+    padding-top: rem(30);
+    // .footer__container
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        @include adaptiveValue("column-gap",100,40);
+        row-gap: rem(15);
+        padding: 0 rem(145);
+        justify-content: center;
+        column-gap: rem(10);
+        @media (max-width:$tablet){
+            padding: 0 rem(15);
+        }
+        a {
+            @include adaptiveValue("font-size",32,18);
+            text-align: center;
+            text-transform: uppercase;
+            transition: opacity 0.3s ease 0s;
+            @media (any-hover: hover){
+                &:hover{
+                    opacity: .6;
+                }
+            }
+        }
+    }
+
+    // .footer__location
+    &__location {
+    }
+
+    // .footer__phone-number
+    &__phone-number {
+    }
+
+    // .footer__mail
+    &__mail {
+    }
+}
+
+//====================================================================================================
