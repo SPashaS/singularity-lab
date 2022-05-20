@@ -55,7 +55,7 @@ body {
 body {
   color: #002e43;
   line-height: 1;
-  font-family: Montserrat;
+  font-family: Montserrat, Arial, sans-serif;
   font-size: 1.875rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
