@@ -70,6 +70,7 @@
         // padding-bottom: 46.6%;
         img {
             width: 100%;
+            height: 100%;
         }
 	}
 
@@ -150,7 +151,6 @@
             display: block;
             width: percent(549,491);
             height: percent(350,966);
-            // height: rem(350);
             background-image: url('@img/rectangle.svg');
             background-size: cover;
             position: absolute;
@@ -158,7 +158,7 @@
             left: rem(175);
             z-index: -1;
             @media (max-width:$mobile){
-                bottom: 0;
+                bottom: 9%;
                 left: 25%;
             }
         }
@@ -166,9 +166,13 @@
             bottom: 34%;
             left: 12%;
             transform: rotate(-36deg);
+            @media (max-width:$mobile){
+                bottom: 34%;
+            }
         }
         img {
             width: 100%;
+            height: 100%;
             position: absolute;
             bottom: 0;
         }
@@ -270,29 +274,51 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
         row-gap: rem(40);
-        @media (max-width:$mobile){
+        .item-suggestions_1 {
+            transform: translateX(rem(61));
+        }
+        .item-suggestions_3 {
+            transform: translateX(rem(-82));
+        }
+        @media (max-width:$tablet){
+            .item-suggestions_1,
+            .item-suggestions_3 {
+                transform: none;
+            }
         }
     }
 
     // .suggestions__item
     &__item {
-        &:first-child {
-            transform: translateX(rem(61));
-        }
-        &:last-child {
-            transform: translateX(rem(-82));
-        }
-        @media (max-width:$tablet){
-            &:first-child,
-            &:last-child {
-                transform: none;
-            }
-        }
     }
+
 }
 .item-suggestions {
     display: flex;
     justify-content: center;
+    &_1 {
+        .item-suggestions__image {
+            img {
+                @include adaptiveValue("width",194,80.5);
+            }
+        }
+    }
+
+    &_2 {
+        .item-suggestions__image {
+            img {
+                @include adaptiveValue("width",378,157);
+            }
+        }
+    }
+
+    &_3 {
+        .item-suggestions__image {
+            img {
+                @include adaptiveValue("width",485,201.5);
+            }
+        }
+    }
     // .item-suggestions__link
 	&__link {
         @media (any-hover: hover){
@@ -336,6 +362,9 @@
         display: block;
         width: 100%;
         height: 100%;
+        @media (max-width:$mobile){
+            width: 200%;
+        }
     }
     // .contacts__container
     &__container {

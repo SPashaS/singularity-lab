@@ -24,7 +24,7 @@
 	&__logo {
 		img {
 			@include adaptiveValue("width",674,150);
-			// width: rem(674);
+			@include adaptiveValue("height",267,59.4);
 		}
 	}
 
